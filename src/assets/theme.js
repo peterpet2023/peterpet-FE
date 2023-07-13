@@ -15,11 +15,17 @@ const font = {
     font-size: 24px;
     font-weight: 700;
   `,
-  small: `
-    font-size: 12px;
-  `,
   bold: `
     font-weight: 700;
+  `,
+  large: `
+    font-size: 22px;
+  `,
+  medium: `
+    font-size: 16px;
+  `,
+  small: `
+    font-size: 12px;
   `,
 };
 
