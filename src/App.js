@@ -1,9 +1,16 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
+import MainPage from './pages/MainPage';
+
 function App() {
   return (
-    <div>
-      <div id='map' style={{ width: '500px', height: '400px' }}></div>
-      <div>hi hello</div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path='/' element={<MainPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

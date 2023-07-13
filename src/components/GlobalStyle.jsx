@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   html, body, #root {
       width: 100%;
       min-height: 100vh;
-      background-color: ${(props) => props.theme.colors.gray};
+      background-color: pink;
       justify-content: center;
       display: flex;
       font-size: 14px;
