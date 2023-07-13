@@ -14,19 +14,19 @@ const BackGround = styled.div`
   }
 `;
 
-// const Wrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   background-color: gold;
-// `;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: gold;
+`;
 
 const Layout = () => {
   return (
     <BackGround>
-      {/* <Wrapper> */}
-      <Outlet />
-      {/* </Wrapper> */}
+      <Wrapper>
+        <Outlet />
+      </Wrapper>
     </BackGround>
   );
 };
