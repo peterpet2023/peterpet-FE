@@ -1,24 +1,20 @@
 /* <div id='map' style={{ width: '500px', height: '400px' }}></div>; */
 
-import { styled } from 'styled-components';
-
-const Wrapper = styled.div`
-  display: flex; 
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Sj = styled.div`
-  display: flex;
-  size: 20px;
-`;
+import Button from '../components/Button/Button';
+import Header from '../components/Header/Header';
+import Horizon from '../components/Hotrizon/Horizon';
 
 const MainPage = () => {
-  return <Wrapper>
-    <Sj>HI</Sj>
-    <div>HI</div>
-    <div>HI</div>
-    </Wrapper>;
+  return (
+    <>
+      <div>메인 페이지 입니다.</div>
+      <Button></Button>
+    
+      <Horizon />
+      
+      <Header underLine titleSize='large' title='요청사항 반영하기' left='back' right='home' />
+    </>
+  );
 };
 
 export default MainPage;

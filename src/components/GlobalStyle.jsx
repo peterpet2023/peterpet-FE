@@ -7,10 +7,9 @@ const GlobalStyle = createGlobalStyle`
   html, body, #root {
       width: 100%;
       min-height: 100vh;
-      background-color: pink;
+      background-color: ${({ theme }) => theme.colors.lightGray};
       justify-content: center;
       display: flex;
-      font-size: 14px;
   }
 
   /* @font-face {
@@ -20,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
   } */
 
   * {
+    font-size: 14px;
     margin: 0;
     padding: 0;
   }
