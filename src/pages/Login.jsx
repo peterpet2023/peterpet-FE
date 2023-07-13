@@ -1,6 +1,7 @@
 /* <div id='map' style={{ width: '500px', height: '400px' }}></div>; */
-
 import { styled } from 'styled-components';
+import Navigation from '../component/Navigation';
+import Header from '../component/Header';
 
 const Wrapper = styled.div`
   display: flex; 
@@ -13,7 +14,8 @@ const Sj = styled.div`
   size: 20px;
 `;
 
-const MainPage = () => {
+
+const Login = () => {
   return <Wrapper>
     <Sj>HI</Sj>
     <div>HI</div>
@@ -21,4 +23,4 @@ const MainPage = () => {
     </Wrapper>;
 };
 
-export default MainPage;
+export default Login;
