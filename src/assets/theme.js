@@ -1,6 +1,7 @@
 const colors = {
   white: '#ffffff',
   black: '#1B1313',
+  darkGray: '#A1A1A1',
   gray: '#d9d9d9',
   blue: '#0679C0',
   lightGray: '#f1f1f1',
@@ -20,12 +21,20 @@ const font = {
   `,
   large: `
     font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
   `,
   medium: `
     font-size: 16px;
+    font-weight: 600;
+  `,
+  mediumSmall: `
+    font-size: 14px;
+    font-weight: 600;
   `,
   small: `
     font-size: 12px;
+    font-weight: 600;
   `,
 };
 
