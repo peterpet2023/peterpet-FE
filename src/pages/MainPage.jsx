@@ -4,6 +4,7 @@ import Button from '../components/Button/Button';
 import HeadLine from '../components/HeadLine/HeadLine';
 import Header from '../components/Header/Header';
 import Horizon from '../components/Hotrizon/Horizon';
+import MoreButton from '../components/MoreButton/MoreButton';
 
 const MainPage = () => {
   return (
@@ -15,6 +16,7 @@ const MainPage = () => {
       <div>hi</div>
       <Header underLine titleSize='large' title='요청사항 반영하기' left='back' right='home' />
       <HeadLine fontType='mediumSmall' emoji='🔴🟡' firstLine='실시간으로 가장' secondLine='인기있는 디자인 랭킹' />
+      <MoreButton>전체보기</MoreButton>
     </>
   );
 };
