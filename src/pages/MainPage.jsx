@@ -9,11 +9,7 @@ const Wrapper = styled.div`
 `;
 
 const MainPage = () => {
-  return (
-    <Wrapper>
-      <div>hiasad</div>
-    </Wrapper>
-  );
+  return <div>hiaadfsad</div>;
 };
 
 export default MainPage;
