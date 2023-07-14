@@ -5,15 +5,17 @@ import Button from '../components/Button/Button';
 import HeadLine from '../components/HeadLine/HeadLine';
 import Header from '../components/Header/Header';
 import Horizon from '../components/Hotrizon/Horizon';
+import Input from '../components/Input/Input';
 import MoreButton from '../components/MoreButton/MoreButton';
 import NavigationBar from '../components/NavigationBar/NavigationBar';
+import ProgressBar from '../components/ProgressBar/ProgressBar';
 import RoundButton from '../components/RoundButton/RoundButton';
 
 const MainPage = () => {
   return (
     <>
       <div>메인 페이지 입니다.</div>
-      <Button></Button>
+      <Button color='brown'>버튼</Button>
 
       <Horizon />
 
@@ -26,27 +28,13 @@ const MainPage = () => {
         subTitle='냠냠냠'
       />
       <MoreButton>전체보기</MoreButton>
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
-      <AttachImage count={2} />
+
       <AttachImage count={2} />
       <AttachImage count={2} />
       <RoundButton>hi</RoundButton>
       <RoundButton size='small'>hi</RoundButton>
+      <Input height='300px' placeholder='hihi' />
+      <ProgressBar percent='100' />
       <NavigationBar />
     </>
   );
