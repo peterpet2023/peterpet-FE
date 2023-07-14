@@ -50,7 +50,7 @@ const IconsContainer = styled.div`
 
 const IconWrapper = styled.div`
   cursor: pointer;
-  width: 48px;
+  width: 60px;
   height: 40px;
   display: flex;
   flex-direction: column;
@@ -62,6 +62,7 @@ const IconWrapper = styled.div`
   justify-content: space-between;
 `;
 
+// TODO: 제품 검색을 들은 페이지로 이동
 const Icon = ({ img, children, onClick }) => {
   return (
     <IconWrapper onClick={onClick}>
@@ -85,9 +86,9 @@ export default function NavigationBar() {
           홈
         </Icon>
         <Icon onClick={() => navigate('/')} img={lens}>
-          제품 검색
+          가이드보기
         </Icon>
-        <Icon img='empty'>견적 받기</Icon>
+        <Icon img='empty'>업로드하기</Icon>
         <Icon img={chat} onClick={() => navigate('/')}>
           채팅
         </Icon>
