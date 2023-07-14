@@ -7,6 +7,7 @@ import Margin from '../../components/Margin/Margin';
 import clo from './clo.png';
 import clo2 from './clo2.png';
 import DualButton from '../../components/DualButton/DualButton';
+import { useNavigate } from 'react-router-dom';
 
 const Photo = styled.img`
   width: 170px;
@@ -27,12 +28,14 @@ const PhotoWrapper = styled.div`
 `;
 
 export default function FullView() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Header title='전체 보기' titleSize='medium' left='back' right='home' underLine />
       <HeadLine firstLine='실시간으로' secondLine='인기있는 디자인 랭킹' emoji='👚👕' fontType='large' />
       <PopularPhotoContainer>
-        <PhotoWrapper>
+        <PhotoWrapper onClick={() => navigate(`/detail/1`)}>
           <Photo src={clo} />
           <Margin height='10' />
           <Typo fontType='medium'>프릴 원피스</Typo>
@@ -45,7 +48,7 @@ export default function FullView() {
       </PopularPhotoContainer>
       <CircleMenu />
       <PopularPhotoContainer>
-        <PhotoWrapper>
+        <PhotoWrapper onClick={() => navigate(`/detail/1`)}>
           <Photo src={clo} />
           <Margin height='10' />
           <Typo fontType='medium'>프릴 원피스</Typo>

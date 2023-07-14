@@ -75,7 +75,7 @@ const Icon = ({ img, children, onClick }) => {
   );
 };
 
-export default function NavigationBar() {
+export default function NavigationBar({ userType }) {
   const navigate = useNavigate();
 
   return (
