@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 import Typo from '../../components/Typo/Typo';
 import Margin from '../../components/Margin/Margin';
+import HeadLine from '../../components/HeadLine/HeadLine';
 
 const CircleButtonContainer = styled.div`
   width: 100%;
@@ -52,18 +53,21 @@ const pets = [
   },
 ];
 
-export default function CircleMenu() {
+export default function CircleMenu({ title }) {
   return (
-    <CircleButtonContainer>
-      {pets.map(({ icon, name }) => (
-        <CircleButtonWrapper>
-          <CircleButton>
-            <Typo>{icon}</Typo>
-          </CircleButton>
-          <Margin height='8' />
-          <Typo fontType='small'>{name}</Typo>
-        </CircleButtonWrapper>
-      ))}
-    </CircleButtonContainer>
+    <>
+      <HeadLine firstLine={title} fontType='medium' />
+      <CircleButtonContainer>
+        {pets.map(({ icon, name }) => (
+          <CircleButtonWrapper>
+            <CircleButton>
+              <Typo>{icon}</Typo>
+            </CircleButton>
+            <Margin height='8' />
+            <Typo fontType='small'>{name}</Typo>
+          </CircleButtonWrapper>
+        ))}
+      </CircleButtonContainer>
+    </>
   );
 }

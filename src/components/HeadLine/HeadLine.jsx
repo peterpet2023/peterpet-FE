@@ -10,7 +10,7 @@ import Margin from '../Margin/Margin';
 
 const HeadLineWrapper = styled.div`
   margin-top: 32px;
-  width: 86%;
+  width: 88%;
 `;
 
 const Emoji = styled.p`
@@ -29,7 +29,15 @@ const SubTitleTypo = styled(Typo)`
   font-weight: 400;
   line-height: 32px;
 `;
-
+/**
+ *
+ * @firstLine {string} 첫번째 줄에 쓸 문자열입니다
+ * @secondLine {string} 두번째 줄에 쓸 문자열입니다.
+ * @emoji {string} 이모티콘이 있는 경우 사용합니다.
+ * @subTitle {string} 부제목이 있는 경우 사용합니다.`
+ * @fontType {'large' | 'medium' | 'small'} 주제목에 쓸 폰트 크기를 설정합니다.
+ * @returns
+ */
 export default function HeadLine({ firstLine, secondLine, emoji, subTitle, fontType }) {
   return (
     <HeadLineWrapper>

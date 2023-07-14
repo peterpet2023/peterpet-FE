@@ -16,11 +16,13 @@ import first from '../../assets/Icons/guide.svg';
 import CircleMenu from './CircleMenu';
 
 const MainPage = () => {
+  // TODO: 유저의 타입 불러오기
+
   return (
     <>
       <MainPageHeader />
       <img src={main} alt='main' style={{ width: '100%' }} />
-      <CircleMenu />
+      <CircleMenu title='반려반려반렬견' />
       <div>hi</div>
       <img src={first} alt='first' style={{ width: '92%', marginBottom: '20px' }} />
       <Horizon />
