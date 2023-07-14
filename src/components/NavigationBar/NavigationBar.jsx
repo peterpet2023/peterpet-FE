@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 const MainWrapper = styled.div`
   height: 84px;
-  background-color: ${({ theme }) => theme.colors.gray};
+  background-color: ${({ theme }) => theme.colors.brown};
 
   position: sticky;
   bottom: 0;
@@ -63,7 +63,7 @@ const Icon = ({ img, children, onClick }) => {
   return (
     <IconWrapper onClick={onClick}>
       {img === 'empty' ? <Margin width='14px' /> : <img src={img} style={{ width: '18px' }} />}
-      <Typo color='smog' fontType='small'>
+      <Typo color='black' fontType='small'>
         {children}
       </Typo>
     </IconWrapper>
