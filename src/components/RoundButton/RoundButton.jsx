@@ -2,8 +2,8 @@ import { styled } from 'styled-components';
 import Typo from '../Typo/Typo';
 
 const RoundWrapper = styled.div`
-  width: ${(props) => (props.size ? '57px' : '72px')};
-  height: ${(props) => (props.size ? '12px' : '32px')};
+  width: ${(props) => (props.size ? '70px' : '72px')};
+  height: ${(props) => (props.size ? '18px' : '32px')};
   background-color: ${({ theme }) => theme.colors.gray};
   color: ${({ theme }) => theme.colors.darkGray};
   border-radius: 20px;

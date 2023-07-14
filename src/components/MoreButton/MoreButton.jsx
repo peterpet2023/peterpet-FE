@@ -23,7 +23,7 @@ export default function MoreButton({ onClick, children }) {
   const navigate = useNavigate();
 
   return (
-    <MoreButtonWrapper onClick={() => navigate('/all-list')}>
+    <MoreButtonWrapper onClick={() => navigate('/full-view')}>
       <Typo fontType='small'>{children}</Typo>
       <img
         src={arrow}

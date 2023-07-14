@@ -38,7 +38,7 @@ const MainPage = () => {
     <>
       <MainPageHeader />
       <img src={main} alt='main' style={{ width: '100%' }} />
-      <CircleMenu title='반려반려반렬견' />
+      <CircleMenu title='반려견 옷제작 바로 검색하기' />
       <img src={first} alt='first' style={{ width: '92%', marginBottom: '20px' }} />
       <Horizon />
       <ReviewContainer />

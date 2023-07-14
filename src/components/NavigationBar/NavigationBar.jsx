@@ -7,6 +7,7 @@ import lens from '../../assets/Icons/NavigationBar/lens.svg';
 import drawers from '../../assets/Icons/NavigationBar/drawers.svg';
 import chat from '../../assets/Icons/NavigationBar/chat.svg';
 import { useNavigate } from 'react-router-dom';
+import Toast from '../Toast/Toast';
 
 const MainWrapper = styled.div`
   height: 84px;
@@ -76,23 +77,24 @@ const Icon = ({ img, children, onClick }) => {
 
 export default function NavigationBar() {
   const navigate = useNavigate();
+
   return (
     <MainWrapper>
       <PostArticleButton>
-        <img src={plus} alt='plus' />
+        <img src={plus} alt='plus' onClick={() => navigate('/full-view')} />
       </PostArticleButton>
       <IconsContainer>
-        <Icon onClick={() => navigate('/')} img={home}>
+        <Icon onClick={() => navigate('/main')} img={home}>
           홈
         </Icon>
-        <Icon onClick={() => navigate('/')} img={lens}>
+        <Icon onClick={() => navigate('/guide')} img={lens}>
           가이드보기
         </Icon>
         <Icon img='empty'>업로드하기</Icon>
-        <Icon img={chat} onClick={() => navigate('/')}>
+        <Icon img={chat} onClick={() => Toast('아직 준비중입니다.')}>
           채팅
         </Icon>
-        <Icon img={drawers} onClick={() => navigate('/')}>
+        <Icon img={drawers} onClick={() => Toast('아직 준비중입니다.')}>
           의뢰 내역
         </Icon>
       </IconsContainer>
