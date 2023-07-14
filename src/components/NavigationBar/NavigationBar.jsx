@@ -12,10 +12,13 @@ const MainWrapper = styled.div`
   height: 84px;
   background-color: ${({ theme }) => theme.colors.brown};
 
-  position: sticky;
+  position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  width: 450px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const PostArticleButton = styled.button`
