@@ -8,6 +8,7 @@ import Horizon from '../components/Hotrizon/Horizon';
 import Input from '../components/Input/Input';
 import MoreButton from '../components/MoreButton/MoreButton';
 import NavigationBar from '../components/NavigationBar/NavigationBar';
+import ProgressBar from '../components/ProgressBar/ProgressBar';
 import RoundButton from '../components/RoundButton/RoundButton';
 
 const MainPage = () => {
@@ -33,7 +34,7 @@ const MainPage = () => {
       <RoundButton>hi</RoundButton>
       <RoundButton size='small'>hi</RoundButton>
       <Input placeholder='hihi' />
-
+      <ProgressBar percent='100' />
       <NavigationBar />
     </>
   );

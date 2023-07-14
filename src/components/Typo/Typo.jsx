@@ -4,7 +4,7 @@ const StyledTypo = styled.p`
   color: ${(props) => (props.color ? props.theme.colors[props.color] : props.theme.colors.black)};
   font-size: ${(props) => props.size || '1rem'};
   font-weight: ${(props) => props.weight || 'normal'};
-
+  width: ${(props) => props.width};
   /* ${(props) => props.title && props.theme.font.title};
   ${(props) => props.largeTitle && props.theme.font.largeTitle};
   ${(props) => props.small && props.theme.font.small};
