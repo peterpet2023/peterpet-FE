@@ -7,9 +7,9 @@
 import { styled } from 'styled-components';
 import Typo from '../Typo/Typo';
 import Margin from '../Margin/Margin';
+import MoreButton from '../MoreButton/MoreButton';
 
 const HeadLineWrapper = styled.div`
-  margin-top: 32px;
   width: 88%;
 `;
 
@@ -38,14 +38,22 @@ const SubTitleTypo = styled(Typo)`
  * @fontType {'large' | 'medium' | 'small'} 주제목에 쓸 폰트 크기를 설정합니다.
  * @returns
  */
-export default function HeadLine({ firstLine, secondLine, emoji, subTitle, fontType }) {
+export default function HeadLine({ firstLine, secondLine, emoji, subTitle, fontType, moreButton }) {
   return (
-    <HeadLineWrapper>
-      {emoji && <Emoji>{emoji}</Emoji>}
-      {firstLine && <HeadTypo fontType={fontType}>{firstLine}</HeadTypo>}
-      {secondLine && <Margin height='4' />}
-      {secondLine && <HeadTypo fontType={fontType}>{secondLine}</HeadTypo>}
-      {subTitle && <SubTitleTypo>{subTitle}</SubTitleTypo>}
-    </HeadLineWrapper>
+    <>
+      <Margin height='26' />
+      <HeadLineWrapper>
+        {emoji && <Emoji>{emoji}</Emoji>}
+        {firstLine && (
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <HeadTypo fontType={fontType}>{firstLine}</HeadTypo>
+            {moreButton && <MoreButton>전체보기</MoreButton>}
+          </div>
+        )}
+        {secondLine && <Margin height='4' />}
+        {secondLine && <HeadTypo fontType={fontType}>{secondLine}</HeadTypo>}
+        {subTitle && <SubTitleTypo>{subTitle}</SubTitleTypo>}
+      </HeadLineWrapper>
+    </>
   );
 }

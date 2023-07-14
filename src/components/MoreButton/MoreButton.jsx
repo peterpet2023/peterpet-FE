@@ -1,6 +1,7 @@
 import Typo from '../Typo/Typo';
 import { styled } from 'styled-components';
 import arrow from '../../assets/Icons/Header/back.svg';
+import { useNavigate } from 'react-router-dom';
 
 const MoreButtonWrapper = styled.div`
   cursor: pointer;
@@ -17,9 +18,12 @@ const MoreButtonWrapper = styled.div`
   }
 `;
 
+// TODO: 특정 페이지로 연결
 export default function MoreButton({ onClick, children }) {
+  const navigate = useNavigate();
+
   return (
-    <MoreButtonWrapper onClick={onClick}>
+    <MoreButtonWrapper onClick={() => navigate('/all-list')}>
       <Typo fontType='small'>{children}</Typo>
       <img
         src={arrow}

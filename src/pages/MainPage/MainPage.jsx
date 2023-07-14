@@ -14,7 +14,21 @@ import MainPageHeader from './MainPageHeader';
 import main from '../../assets/Icons/main.svg';
 import first from '../../assets/Icons/guide.svg';
 import CircleMenu from './CircleMenu';
+import ReviewContainer from './ReviewContainer';
+import Margin from '../../components/Margin/Margin';
+import DualButton from '../../components/DualButton/DualButton';
 
+const userType = {
+  consumer: {
+    circleMenu: '반려견 옷제작 바로 검색하기',
+  },
+  designer: {
+    circleMenu: '나만의 디자인 바로 뽐내기',
+  },
+  tailer: {
+    circleMenu: '고객들의 옷 제작 의뢰 바로보기',
+  },
+};
 const MainPage = () => {
   // TODO: 유저의 타입 불러오기
 
@@ -23,9 +37,11 @@ const MainPage = () => {
       <MainPageHeader />
       <img src={main} alt='main' style={{ width: '100%' }} />
       <CircleMenu title='반려반려반렬견' />
-      <div>hi</div>
       <img src={first} alt='first' style={{ width: '92%', marginBottom: '20px' }} />
       <Horizon />
+      <ReviewContainer />
+      <DualButton color='brown' count='9' />
+      <Margin height='150' />
 
       <NavigationBar />
     </>
