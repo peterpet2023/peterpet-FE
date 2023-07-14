@@ -10,10 +10,10 @@ const MainPage = () => {
   return (
     <>
       <div>메인 페이지 입니다.</div>
-      <Button>hi</Button>
-      <div>hi</div>
+      <Button></Button>
+    
       <Horizon />
-      <div>hi</div>
+      
       <Header underLine titleSize='large' title='요청사항 반영하기' left='back' right='home' />
       <HeadLine fontType='mediumSmall' emoji='🔴🟡' firstLine='실시간으로 가장' secondLine='인기있는 디자인 랭킹' />
       <MoreButton>전체보기</MoreButton>

@@ -7,6 +7,7 @@ const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.gray};
   border: none;
   color: ${({ theme }) => theme.colors.white};
+  
 `;
 
 export default Button;
