@@ -19,6 +19,7 @@ import Margin from '../../components/Margin/Margin';
 import DualButton from '../../components/DualButton/DualButton';
 import PopularDesign from './PopularDesign';
 import LovingPeople from './LovingPeople';
+import FileInput from '../../components/FileInput';
 
 const userType = {
   consumer: {
@@ -44,7 +45,9 @@ const MainPage = () => {
       <ReviewContainer />
       <PopularDesign />
       <LovingPeople />
+      <FileInput />
       <Margin height='100' />
+
       <NavigationBar userType='designer' />
     </>
   );
