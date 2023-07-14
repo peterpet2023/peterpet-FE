@@ -45,7 +45,6 @@ const MainPage = () => {
       <PopularDesign />
       <LovingPeople />
       <Margin height='100' />
-
       <NavigationBar />
     </>
   );

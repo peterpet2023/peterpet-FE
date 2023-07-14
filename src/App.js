@@ -10,6 +10,7 @@ import New_password from './pages/New_password';
 import New_detail from './pages/New_detail';
 import Logo from './pages/Logo';
 import Reception2 from './pages/reception/Reception2';
+import GuidePage from './pages/GuidePage/GuidePage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path='*' element={<div>없는페이지임</div>} />
           <Route path='/login' element={<Login_email />} />
           <Route path='/main' element={<MainPage />} />
+          <Route path='/guide' element={<GuidePage />} />
           <Route path='/Reception2' element={<Reception2 />} />
         </Route>
       </Routes>

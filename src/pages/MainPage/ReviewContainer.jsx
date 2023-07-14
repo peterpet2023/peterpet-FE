@@ -5,6 +5,9 @@ import Margin from '../../components/Margin/Margin';
 import Typo from '../../components/Typo/Typo';
 import DualButton from '../../components/DualButton/DualButton';
 import Horizon from '../../components/Hotrizon/Horizon';
+import before from './before.png';
+import after from './after.png';
+import { useState } from 'react';
 
 const ReviewBoxContainer = styled.div`
   width: 88%;
@@ -26,7 +29,7 @@ const ReviewTitleWrapper = styled.div`
   align-items: center;
 `;
 
-const ReviewPhoto = styled.div`
+const ReviewPhoto = styled.img`
   width: 140px;
   height: 140px;
   background-color: gold;
@@ -52,6 +55,19 @@ const ReviewContentWrapper = styled.div`
 `;
 
 export default function ReviewContainer() {
+  let [reviewCount, setReviewCount] = useState(1);
+
+  const handleReviewCount = (e) => {
+    const { id } = e.currentTarget;
+
+    if (id === 'down' && reviewCount !== 0) {
+      setReviewCount(reviewCount--);
+    }
+    if (id === 'up' && reviewCount !== 11) {
+      setReviewCount(reviewCount++);
+    }
+  };
+
   return (
     <>
       <HeadLine moreButton fontType='medium' firstLine='실사용 고객 리뷰' />
@@ -67,12 +83,12 @@ export default function ReviewContainer() {
         <Margin height='10' />
         <PhotoWrapper>
           <ReviewPhotoWrapper>
-            <ReviewPhoto />
+            <ReviewPhoto src={before} />
             <Margin height='12' />
             <Typo>Before</Typo>
           </ReviewPhotoWrapper>
           <ReviewPhotoWrapper>
-            <ReviewPhoto />
+            <ReviewPhoto src={after} />
             <Margin height='12' />
             <Typo>After</Typo>
           </ReviewPhotoWrapper>
@@ -80,11 +96,11 @@ export default function ReviewContainer() {
         <ReviewContentWrapper>
           <Margin height='16' />
           <Typo fontType='medium'>제목</Typo>
-          <Margin height='8' />
+          <Margin height='12' />
           <Typo>내용asdfasdfasdfasㅁㄴ아ㅗ럼노어ㅏㄹ너마로나머ㅏㄴ오라ㅓㅁ노아러ㅗ머나오람너</Typo>
         </ReviewContentWrapper>
       </ReviewBoxContainer>
-      <DualButton count='7' />
+      <DualButton count={reviewCount} onClick={handleReviewCount} />
       <Horizon />
     </>
   );

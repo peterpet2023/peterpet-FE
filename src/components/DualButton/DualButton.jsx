@@ -23,14 +23,14 @@ const DualButtonWrapper = styled.div`
   align-items: center;
 `;
 
-export default function DualButton({ color, count }) {
+export default function DualButton({ color, count, onClick }) {
   return (
     <DualButtonWrapper>
-      <SquareButton color={color}>
+      <SquareButton color={color} onClick={onClick} id='down'>
         <img src={back} alt='back' />
       </SquareButton>
       <Typo fontType='medium'>{count} / 10</Typo>
-      <SquareButton color={color}>
+      <SquareButton color={color} onClick={onClick} id='up'>
         <img src={back} alt='back' style={{ transform: 'rotate(180deg)' }} />
       </SquareButton>
     </DualButtonWrapper>
