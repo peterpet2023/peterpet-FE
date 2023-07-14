@@ -13,6 +13,9 @@ import Logo from './pages/Logo';
 import MainPage from './pages/MainPage/MainPage';
 import Login from './pages/Login';
 import S_account from './pages/S_account';
+import Reception2 from './pages/reception/Reception2';
+
+
 
 function App() {
   return (
@@ -31,6 +34,8 @@ function App() {
           <Route path="*" element={ <div>없는페이지임</div> } />
           <Route path='/login' element={<Login />} />
           <Route path='/main' element={<MainPage />} />
+
+          <Route path="/Reception2" element={<Reception2/>} />
         </Route>
       </Routes>
     </BrowserRouter>
