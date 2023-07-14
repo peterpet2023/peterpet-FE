@@ -5,7 +5,6 @@ import Horizon from '../components/Hotrizon/Horizon';
 import Header from '../components/Header/Header';
 import Typo from '../components/Typo/Typo';
 import Margin from '../components/Margin/Margin';
-import { useNavigate } from 'react-router-dom';
 
 
 const Wrapper = styled.div`
@@ -40,29 +39,42 @@ const Horizonbox = styled.div`
     width: 90%;
     height: 100px;
     margin-top: 10px;
-    margin-bottom: 180px;
+`
+const HboxWrapper= styled.div`
+    display: flex;
+    flex-direction:column;
+    width:90%;
+    margin-bottom: 60px;
 `
 
-const Login_password = () => {
+const New_password = () => {
     return (
       <Wrapper>
-        <Header titleSize='large' left='cancel' />
+        <Header titleSize='small' title='회원가입' left='back' />
 
         <Textbox>
-            <Typo size= "1.8em" weight="bold" >비밀번호 입력</Typo>
-            <Typo size= "0.9em" weight="bold" color= 'gray'> <br/>반갑습니다 고객님 :) </Typo>
+            <Typo size= "1.8em" weight="bold" > 이메일 입력</Typo>
+            <Typo size= "0.9em" weight="bold" color= 'gray'> <br/>자주 사용하시는 이메일을 입력해주세요. </Typo>
         </Textbox>
 
-        <Horizonbox>
-            <Typo color= 'gray'>input email_data</Typo> 
-            <Horizon/>
-            <Margin height='20'/>
-            <Typo color= 'gray' size ='0.7rem'>비밀번호 보기</Typo> 
-        </Horizonbox>
+        <HboxWrapper>
+            <Horizonbox>
+                <Typo>input email_data</Typo> 
+                <Horizon/>
+                <Margin height= '10'/>
+                <Typo color= 'gray' size ='0.7rem'>sdf</Typo>
+            </Horizonbox>
+            <Horizonbox>
+                <Typo>input email_data</Typo> 
+                <Horizon/>
+                <Margin height= '10'/>
+                <Typo color= 'gray' size ='0.7rem'>sdf</Typo>
+            </Horizonbox>
+        </HboxWrapper>
 
         <Buttonbox>
             <Button>
-                <Typo weight = 'bold' color= "${({ theme }) => theme.colors.white">로그인</Typo>
+                <Typo weight = 'bold' color= "${({ theme }) => theme.colors.white">계속하기</Typo>
             </Button>
         </Buttonbox>
              
@@ -71,4 +83,4 @@ const Login_password = () => {
     );
   };
   
-  export default Login_password ;
+  export default New_password ;

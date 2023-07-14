@@ -21,6 +21,7 @@ const iconType = (navigate, type) => {
 };
 
 const HeaderWrapper = styled.div`
+  margin-top: 16px;
   width: 100%;
   height: 46px;
   display: flex;

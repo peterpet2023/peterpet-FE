@@ -1,9 +1,12 @@
 /* <div id='map' style={{ width: '500px', height: '400px' }}></div>; */
 import { styled } from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+
 import Button from '../components/Button/Button';
 import Horizon from '../components/Hotrizon/Horizon';
 import Header from '../components/Header/Header';
 import Typo from '../components/Typo/Typo';
+import Margin from '../components/Margin/Margin';
 
 
 const Wrapper = styled.div`
@@ -42,6 +45,7 @@ const Horizonbox = styled.div`
 `
 
 const Login_email = () => {
+    const navigate = useNavigate();
     return (
       <Wrapper>
         <Header titleSize='large' left='cancel' />
@@ -52,12 +56,14 @@ const Login_email = () => {
         </Textbox>
 
         <Horizonbox>
-            <p>input email_data</p> 
+            <Typo>input email_data</Typo> 
             <Horizon/>
+
+
         </Horizonbox>
 
         <Buttonbox>
-            <Button>
+            <Button onClick={() => navigate('/Login_password')}>
                 <Typo weight = 'bold' color= "${({ theme }) => theme.colors.white">계속하기</Typo>
             </Button>
         </Buttonbox>

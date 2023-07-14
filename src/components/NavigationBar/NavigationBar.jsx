@@ -10,12 +10,15 @@ import { useNavigate } from 'react-router-dom';
 
 const MainWrapper = styled.div`
   height: 84px;
-  background-color: ${({ theme }) => theme.colors.gray};
+  background-color: ${({ theme }) => theme.colors.brown};
 
-  position: sticky;
+  position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  width: 450px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const PostArticleButton = styled.button`
@@ -47,7 +50,7 @@ const IconsContainer = styled.div`
 
 const IconWrapper = styled.div`
   cursor: pointer;
-  width: 48px;
+  width: 60px;
   height: 40px;
   display: flex;
   flex-direction: column;
@@ -59,11 +62,12 @@ const IconWrapper = styled.div`
   justify-content: space-between;
 `;
 
+// TODO: 제품 검색을 들은 페이지로 이동
 const Icon = ({ img, children, onClick }) => {
   return (
     <IconWrapper onClick={onClick}>
       {img === 'empty' ? <Margin width='14px' /> : <img src={img} style={{ width: '18px' }} />}
-      <Typo color='smog' fontType='small'>
+      <Typo color='black' fontType='small'>
         {children}
       </Typo>
     </IconWrapper>
@@ -82,9 +86,9 @@ export default function NavigationBar() {
           홈
         </Icon>
         <Icon onClick={() => navigate('/')} img={lens}>
-          제품 검색
+          가이드보기
         </Icon>
-        <Icon img='empty'>견적 받기</Icon>
+        <Icon img='empty'>업로드하기</Icon>
         <Icon img={chat} onClick={() => navigate('/')}>
           채팅
         </Icon>

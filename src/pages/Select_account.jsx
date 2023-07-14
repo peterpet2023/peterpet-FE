@@ -1,10 +1,11 @@
 /* <div id='map' style={{ width: '500px', height: '400px' }}></div>; */
 import { styled } from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+
 import Button from '../components/Button/Button';
 import Horizon from '../components/Hotrizon/Horizon';
 import Header from '../components/Header/Header';
 import Typo from '../components/Typo/Typo';
-import { useNavigate } from 'react-router-dom';
 
 
 const Wrapper = styled.div`
@@ -35,6 +36,7 @@ const Textbox = styled.div`
 `
 
 const Select_account = () => {
+    const navigate = useNavigate();
     return (
       <Wrapper>
         <Header titleSize='large' left='cancel' />
@@ -46,20 +48,20 @@ const Select_account = () => {
 
 
         <Buttonbox>
-            <Button>
-                <Typo weight = 'bold' color= "${({ theme }) => theme.colors.white">저는 고객입니다.</Typo>
+            <Button onClick={() => navigate('/Login_email')}>
+                <Typo weight = 'bold' color= "white">저는 고객입니다.</Typo>
             </Button>
         </Buttonbox>
              
         <Buttonbox>
-            <Button>
+            <Button onClick={() => navigate('/Login_email')}>
                 <Typo weight = 'bold' color= "white">저는 디자이너입니다.</Typo>
             </Button>
         </Buttonbox>
      
         <Buttonbox>
-            <Button>
-                <Typo weight = 'bold' color= "${({ theme }) => theme.colors.white">저는 재단사입니다.</Typo>
+            <Button onClick={() => navigate('/Login_email')}>
+                <Typo weight = 'bold' color= "white">저는 재단사입니다.</Typo>
             </Button>
         </Buttonbox>
      </Wrapper>

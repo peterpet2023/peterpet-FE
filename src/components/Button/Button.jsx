@@ -4,9 +4,9 @@ const Button = styled.button`
   height: 46px;
   min-width: 349px;
   border-radius: 7px;
-  background-color: ${({ theme }) => theme.colors.gray};
+  background-color: ${(props) => props.color && props.theme.colors[props.color]};
   border: none;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${(props) => props.color && props.theme.colors.white};
   cursor: pointer;
 `;
 

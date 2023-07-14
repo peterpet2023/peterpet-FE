@@ -1,9 +1,13 @@
 /* <div id='map' style={{ width: '500px', height: '400px' }}></div>; */
+import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
+import React from "react";
 import Button from '../components/Button/Button';
 import Horizon from '../components/Hotrizon/Horizon';
 import Header from '../components/Header/Header';
 import Typo from '../components/Typo/Typo';
+
+
 
 
 const Wrapper = styled.div`
@@ -33,6 +37,7 @@ const Textbox = styled.div`
 `
 
 const Welcome = () => {
+    const navigate = useNavigate();
     return (
       <Wrapper>
         <Header titleSize='large' left='cancel' />
@@ -44,13 +49,14 @@ const Welcome = () => {
 
 
         <Buttonbox>
-            <Button>
-                <Typo weight = 'bold' color= "${({ theme }) => theme.colors.white">로그인</Typo>
+            
+            <Button onClick={() => navigate('/select')} >
+                <Typo weight = 'bold' color= "white">로그인</Typo>
             </Button>
         </Buttonbox>
              
         <Buttonbox>
-            <Button>
+            <Button onClick={() => navigate('/select')}>
                 <Typo weight = 'bold' color= "white">회원가입</Typo>
             </Button>
         </Buttonbox>

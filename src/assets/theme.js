@@ -6,6 +6,7 @@ const colors = {
   blue: '#0679C0',
   lightGray: '#f1f1f1',
   smog: '#565656',
+  brown: '#C4A076',
 };
 
 const font = {
