@@ -19,14 +19,14 @@ import Typo from '../../components/Typo/Typo';
 const RoundBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   width: 400px;
   color: ${({ theme }) => theme.colors.smog};
 
   border-radius: 7px;
   border: 1px solid ${({ theme }) => theme.colors.darkGray};
-  height: 250px;
+  height: ${(props) => props.height};
 `
 
 const TextBox= styled.div`
@@ -51,17 +51,7 @@ const Box = styled.div`
 
     justify-items: center;
     align-items: center;
-`
-const ImgBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    width: 85px;
-    color: ${({ theme }) => theme.colors.smog};
-    margin: 4px;
-    border-radius: 7px;
-    border: 1px solid ${({ theme }) => theme.colors.darkGray};
-    height: 85px;
+    width:100%;
 `
 
 const Text= styled(Typo)`
@@ -88,76 +78,68 @@ const ButtonWrapper = styled.div`
     margin:10px;
 
 `
-const Reception2 = () => {
+const Reception3 = () => {
     const navigate = useNavigate();
   return (
    
     <>
-      <Header underLine titleSize='midium' title='품목 선택하기' left='back' right='cancel' />
+      <Header underLine titleSize='midium' title='요청사항 입력하기' left='back' right='cancel' />
       
       <Margin height='20'/>
       
-      <ProgressBar percent='50' />
+      <ProgressBar percent='80' />
       
       <HeadLine
         fontType='large'
-        firstLine='맡기실 디자인에 리폼할'
-        secondLine='옷 파일을 업로드 해주세요.'
+        firstLine='제작 요청사항을 입력해주세요'
       />
      
       <Margin height='20'/>
 
-      <RoundBox>
-        <Margin height='15'/>
-        <TextBox>
-            <Text weight='bold'>
-                전체 사진에는 상품의 전체적인 앞 / 뒤 사진을 <br/>
-                상세사진에는 봉제 상세 부위를 <br/>
-                자세하게 촬영하여 첨부해 주세요.
-            </Text>
-        </TextBox>
-
-        <BoxWrapper>
-            <Box>
-                <ImgBox/>
-                <Typo size='small' color='gray'>전체 </Typo>
-            </Box>
-
-            <Box>
-                <ImgBox/>
-                <Typo size='small' color='gray'>뒷면 </Typo>
-            </Box>
-
-            <Box>
-                <ImgBox/>
-                <Typo size='small' color='gray'>안쪽 </Typo>
-            </Box>
-
-            <Box>
-                <ImgBox/>
-                <Typo size='small' color='gray'>봉제 부위 </Typo>
-            </Box>
-        </BoxWrapper>
-      </RoundBox>
-
-      <Margin height='15'/>
       <Wrapper>  
         <UploadWrapper>
-        <Typo>전체 사진 </Typo>  
-        <Margin height= '10'/>
-        <AttachImage count={0} />
+        <Typo weight='bold'>제작 요청 사항 선택 </Typo>  
+        <Margin height= '5'/>
+        <RoundBox height='50px'> 
+            <Typo color='gray'>제작 요청 사항을 선택해 주세요.</Typo>
+        </RoundBox>
         </UploadWrapper>
 
         <UploadWrapper>
-        <Typo>상세사진 </Typo>  
-        <Margin height= '10'/>
-        <AttachImage count={0} />
+        <Typo weight='bold'>사이즈 </Typo>  
+        <Margin height= '5'/>
+        <RoundBox height='50px'>
+            <Typo color='gray'>제작 요청 사항을 선택해 주세요.</Typo>
+        </RoundBox>
         </UploadWrapper>
+
+        <UploadWrapper>
+        <RoundBox>
+            <Margin height='10'/>
+            <TextBox>
+                <Text weight='bold' color='gray'>
+                    요청 사항을 적으실 때는 세 가지만 기억해주세요! <br/>
+                    어디가   어때서   어떻게 <br/>
+                </Text>
+                <Margin height='5'/>
+                <Typo size='small' color='gray'>  Ex. 옷의 목부분에 레이스를 달아주세요.</Typo>  
+                
+            </TextBox>
+        </RoundBox>
+        <Margin height='15'/>
+        <Box>
+            <Input height='200px' placeholder='위의 안내에 따라 적어주셔야 자세하고 친절한 상담이 가능합니다.'/>
+        </Box>
+        </UploadWrapper>
+
+
+      
       </Wrapper>
 
+     
       <Horizon/>  
       <ButtonWrapper>
-        <Button color='black' onClick={() => navigate('/Reception3')} >
+        <Button color='black' onClick={() => navigate('/')} >
             <Typo weight = 'bold' color= "white">다음</Typo>
         </Button>
       </ButtonWrapper>
@@ -167,4 +149,4 @@ const Reception2 = () => {
   );
 };
 
-export default Reception2;
+export default Reception3;
