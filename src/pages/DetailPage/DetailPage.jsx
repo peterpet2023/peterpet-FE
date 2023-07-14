@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import Margin from '../../components/Margin/Margin';
@@ -28,6 +28,7 @@ const TagWrapper = styled.div`
 
 export default function DetailPage() {
   const { designId } = useParams();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -58,8 +59,10 @@ export default function DetailPage() {
         <Typo fontType='medium'>150,000원 ~ 300,000원</Typo>
       </Box>
       <Margin height='20' />
-
-      <Button color='black'>다음</Button>
+      <Button color='black' onClick={() => navigate('/Reception2')}>
+        다음
+      </Button>
+      <Margin height='40' />
     </>
   );
 }
