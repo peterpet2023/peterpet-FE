@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
-import MainPage from './pages/MainPage';
+import MainPage from './pages/MainPage/MainPage';
+
 import Welcome from './pages/Welcome';
 import Select_account from './pages/Select_account';
 import Login_email from './pages/Login_email';
@@ -9,6 +10,9 @@ import New_agree from './pages/New_agree';
 import New_password from './pages/New_password';
 import New_detail from './pages/New_detail';
 import Logo from './pages/Logo';
+import MainPage from './pages/MainPage/MainPage';
+import Login from './pages/Login';
+import S_account from './pages/S_account';
 
 function App() {
   return (
@@ -25,6 +29,8 @@ function App() {
           <Route path='/New_detail' element={<New_detail/>} />
           <Route path='/Logo' element={<Logo/>}/>
           <Route path="*" element={ <div>없는페이지임</div> } />
+          <Route path='/login' element={<Login />} />
+          <Route path='/main' element={<MainPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
