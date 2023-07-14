@@ -39,7 +39,7 @@ const Welcome = () => {
 
         <Textbox>
         <Typo size= "1.8em" weight="bold" > 오직 나의 반려견을 위한 옷을 <br/> 만들어볼까요?</Typo>
-        <Typo size= "0.8em" weight="bold" color= 'gray'> <br/>로그인 또는 회원가입이 필요합니다 </Typo>
+        <Typo size= "0.9em" weight="bold" color= 'gray'> <br/>로그인 또는 회원가입이 필요합니다 </Typo>
         </Textbox>
 
 

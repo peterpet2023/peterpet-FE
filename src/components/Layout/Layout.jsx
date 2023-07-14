@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 const BackGround = styled.div`
-  width: 500px;
+  width: 450px;
   background-color: ${({ theme }) => theme.colors.white};
 
   display: flex;
@@ -19,6 +19,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+
+  position: relative;
 `;
 
 const Layout = () => {

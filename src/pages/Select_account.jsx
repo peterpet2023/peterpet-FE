@@ -4,13 +4,16 @@ import Button from '../components/Button/Button';
 import Horizon from '../components/Hotrizon/Horizon';
 import Header from '../components/Header/Header';
 import Typo from '../components/Typo/Typo';
+import { useNavigate } from 'react-router-dom';
 
 
 const Wrapper = styled.div`
   display: flex; 
   flex-direction: column;
-  //align-items: center;
+  align-items: center;
+  width: 100%;
 `;
+
 
 
 const Buttonbox = styled.div`
@@ -33,12 +36,12 @@ const Textbox = styled.div`
 
 const Select_account = () => {
     return (
-      <>
+      <Wrapper>
         <Header titleSize='large' left='cancel' />
 
         <Textbox>
         <Typo size= "1.8em" weight="bold" > 나는 어떤 사람인가요?</Typo>
-        <Typo size= "0.8em" weight="bold" color= 'gray'> <br/>어떤 계정으로 사용할지 선택해주세요 </Typo>
+        <Typo size= "0.9em" weight="bold" color= 'gray'> <br/>어떤 계정으로 사용할지 선택해주세요 </Typo>
         </Textbox>
 
 
@@ -59,7 +62,7 @@ const Select_account = () => {
                 <Typo weight = 'bold' color= "${({ theme }) => theme.colors.white">저는 재단사입니다.</Typo>
             </Button>
         </Buttonbox>
-     </>
+     </Wrapper>
     );
   };
   

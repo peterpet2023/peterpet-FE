@@ -41,24 +41,25 @@ const Horizonbox = styled.div`
     margin-bottom: 180px;
 `
 
-const Login_email = () => {
+const Login_password = () => {
     return (
       <Wrapper>
         <Header titleSize='large' left='cancel' />
 
         <Textbox>
-            <Typo size= "1.8em" weight="bold" > 이메일 입력</Typo>
-            <Typo size= "0.9em" weight="bold" color= 'gray'> <br/>자주 사용하시는 이메일을 입력해주세요. </Typo>
+            <Typo size= "1.8em" weight="bold" >비밀번호 입력</Typo>
+            <Typo size= "0.9em" weight="bold" color= 'gray'> <br/>반갑습니다 고객님 :) </Typo>
         </Textbox>
 
         <Horizonbox>
-            <p>input email_data</p> 
+            <Typo color= 'gray'>input email_data</Typo> 
             <Horizon/>
+            <Typo color= 'gray' size ='0.7rem'>비밀번호 보기</Typo> 
         </Horizonbox>
 
         <Buttonbox>
             <Button>
-                <Typo weight = 'bold' color= "${({ theme }) => theme.colors.white">계속하기</Typo>
+                <Typo weight = 'bold' color= "${({ theme }) => theme.colors.white">로그인</Typo>
             </Button>
         </Buttonbox>
              
@@ -67,4 +68,4 @@ const Login_email = () => {
     );
   };
   
-  export default Login_email ;
+  export default Login_password ;
