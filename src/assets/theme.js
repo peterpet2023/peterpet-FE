@@ -28,7 +28,7 @@ const font = {
   `,
   medium: `
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
   `,
   mediumSmall: `
     font-size: 14px;

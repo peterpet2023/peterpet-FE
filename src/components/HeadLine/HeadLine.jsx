@@ -7,10 +7,10 @@
 import { styled } from 'styled-components';
 import Typo from '../Typo/Typo';
 import Margin from '../Margin/Margin';
+import MoreButton from '../MoreButton/MoreButton';
 
 const HeadLineWrapper = styled.div`
-  margin-top: 32px;
-  width: 86%;
+  width: 88%;
 `;
 
 const Emoji = styled.p`
@@ -29,15 +29,31 @@ const SubTitleTypo = styled(Typo)`
   font-weight: 400;
   line-height: 32px;
 `;
-
-export default function HeadLine({ firstLine, secondLine, emoji, subTitle, fontType }) {
+/**
+ *
+ * @firstLine {string} 첫번째 줄에 쓸 문자열입니다
+ * @secondLine {string} 두번째 줄에 쓸 문자열입니다.
+ * @emoji {string} 이모티콘이 있는 경우 사용합니다.
+ * @subTitle {string} 부제목이 있는 경우 사용합니다.`
+ * @fontType {'large' | 'medium' | 'small'} 주제목에 쓸 폰트 크기를 설정합니다.
+ * @returns
+ */
+export default function HeadLine({ firstLine, secondLine, emoji, subTitle, fontType, moreButton }) {
   return (
-    <HeadLineWrapper>
-      {emoji && <Emoji>{emoji}</Emoji>}
-      {firstLine && <HeadTypo fontType={fontType}>{firstLine}</HeadTypo>}
-      {secondLine && <Margin height='4' />}
-      {secondLine && <HeadTypo fontType={fontType}>{secondLine}</HeadTypo>}
-      {subTitle && <SubTitleTypo>{subTitle}</SubTitleTypo>}
-    </HeadLineWrapper>
+    <>
+      <Margin height='26' />
+      <HeadLineWrapper>
+        {emoji && <Emoji>{emoji}</Emoji>}
+        {firstLine && (
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <HeadTypo fontType={fontType}>{firstLine}</HeadTypo>
+            {moreButton && <MoreButton>전체보기</MoreButton>}
+          </div>
+        )}
+        {secondLine && <Margin height='4' />}
+        {secondLine && <HeadTypo fontType={fontType}>{secondLine}</HeadTypo>}
+        {subTitle && <SubTitleTypo>{subTitle}</SubTitleTypo>}
+      </HeadLineWrapper>
+    </>
   );
 }
