@@ -21,7 +21,7 @@ export default function AttachImage({ count, onClick }) {
     <ImageBox onClick={onClick}>
       <img src={image} alt='imageimg' />
       <Typo fontType='small' color='darkGray'>
-        {count}/3
+        {count}/1
       </Typo>
     </ImageBox>
   );
