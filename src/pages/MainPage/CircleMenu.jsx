@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 import Typo from '../../components/Typo/Typo';
 import Margin from '../../components/Margin/Margin';
 import HeadLine from '../../components/HeadLine/HeadLine';
+import { useNavigate } from 'react-router-dom';
 
 const CircleButtonContainer = styled.div`
   width: 100%;
@@ -38,28 +39,34 @@ const pets = [
   {
     icon: '🐕‍🦺',
     name: '소형견',
+    id: 'smallDog',
   },
   {
     icon: '🐩',
     name: '중형견',
+    id: 'mediumDog',
   },
   {
     icon: '🐕',
     name: '대형견',
+    id: 'largeDog',
   },
   {
     icon: '🐈‍⬛',
     name: '고양이',
+    id: 'cat',
   },
 ];
 
 export default function CircleMenu({ title }) {
+  const navigate = useNavigate();
+
   return (
     <>
       <HeadLine firstLine={title} fontType='medium' />
       <CircleButtonContainer>
-        {pets.map(({ icon, name }) => (
-          <CircleButtonWrapper>
+        {pets.map(({ icon, name, id }) => (
+          <CircleButtonWrapper onClick={() => navigate(`/design/${id}`)}>
             <CircleButton>
               <Typo>{icon}</Typo>
             </CircleButton>

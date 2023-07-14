@@ -8,6 +8,7 @@ const Button = styled.button`
   border: none;
   color: ${(props) => props.color && props.theme.colors.white};
   cursor: pointer;
+  ${(props) => props.theme.font[props.fontType]};
 `;
 
 export default Button;

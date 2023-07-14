@@ -13,8 +13,8 @@ const Icon = styled.img`
 const iconType = (navigate, type) => {
   const icon = {
     back: <Icon src={back} alt='back' onClick={() => navigate(-1)} />,
-    cancel: <Icon src={cancel} alt='cancel' onClick={() => navigate('/')} />,
-    home: <Icon src={home} alt='home' onClick={() => navigate('/')} />,
+    cancel: <Icon src={cancel} alt='cancel' onClick={() => navigate('/main')} />,
+    home: <Icon src={home} alt='home' onClick={() => navigate('/main')} />,
   };
 
   return icon[type];
