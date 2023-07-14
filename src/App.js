@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import MainPage from './pages/MainPage';
-import Login from './pages/Login';
-import S_account from './pages/S_account';
+import Welcome from './pages/Welcome';
+import Select_account from './pages/Select_account';
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path='/' element={<Login/>} />
+          <Route path='/' element={<Welcome/>} />
         </Route>
       </Routes>
     </BrowserRouter>

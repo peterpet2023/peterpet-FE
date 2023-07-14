@@ -9,33 +9,32 @@ import Typo from '../components/Typo/Typo';
 const Wrapper = styled.div`
   display: flex; 
   flex-direction: column;
-  //align-items: center;
+  align-items: center;
+  width: 100%;
 `;
 
-const main = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: space-between;
-    margin-top: 100px;
-`
-const Buttonbox = styled.div`
 
+const Buttonbox = styled.div`
+    display:flex;
+    flex-direction: column;
+    width: 90%;
     border: none;
     margin:10px;
+
 `
 
 const Textbox = styled.div`
-    width: 90%;
-    height: 100px;
     display: flex;
     flex-direction:column;
+    width: 90%;
+    height: 100px;
     margin-top: 80px;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
 `
 
-const Login = () => {
+const Welcome = () => {
     return (
-      <>
+      <Wrapper>
         <Header titleSize='large' left='cancel' />
 
         <Textbox>
@@ -46,18 +45,18 @@ const Login = () => {
 
         <Buttonbox>
             <Button>
-                <Typo color= "${({ theme }) => theme.colors.white">로그인</Typo>
+                <Typo weight = 'bold' color= "${({ theme }) => theme.colors.white">로그인</Typo>
             </Button>
         </Buttonbox>
              
         <Buttonbox>
             <Button>
-                <Typo color= "white">회원가입</Typo>
+                <Typo weight = 'bold' color= "white">회원가입</Typo>
             </Button>
         </Buttonbox>
      
-     </>
+     </Wrapper>
     );
   };
   
-  export default Login ;
+  export default Welcome ;
