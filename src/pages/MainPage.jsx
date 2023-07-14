@@ -6,6 +6,7 @@ import HeadLine from '../components/HeadLine/HeadLine';
 import Header from '../components/Header/Header';
 import Horizon from '../components/Hotrizon/Horizon';
 import MoreButton from '../components/MoreButton/MoreButton';
+import NavigationBar from '../components/NavigationBar/NavigationBar';
 import RoundButton from '../components/RoundButton/RoundButton';
 
 const MainPage = () => {
@@ -26,8 +27,27 @@ const MainPage = () => {
       />
       <MoreButton>전체보기</MoreButton>
       <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
+      <AttachImage count={2} />
       <RoundButton>hi</RoundButton>
       <RoundButton size='small'>hi</RoundButton>
+      <NavigationBar />
     </>
   );
 };
