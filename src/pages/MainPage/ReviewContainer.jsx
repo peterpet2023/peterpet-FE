@@ -3,6 +3,8 @@ import HeadLine from '../../components/HeadLine/HeadLine';
 import MoreButton from '../../components/MoreButton/MoreButton';
 import Margin from '../../components/Margin/Margin';
 import Typo from '../../components/Typo/Typo';
+import DualButton from '../../components/DualButton/DualButton';
+import Horizon from '../../components/Hotrizon/Horizon';
 
 const ReviewBoxContainer = styled.div`
   width: 88%;
@@ -82,6 +84,8 @@ export default function ReviewContainer() {
           <Typo>내용asdfasdfasdfasㅁㄴ아ㅗ럼노어ㅏㄹ너마로나머ㅏㄴ오라ㅓㅁ노아러ㅗ머나오람너</Typo>
         </ReviewContentWrapper>
       </ReviewBoxContainer>
+      <DualButton count='7' />
+      <Horizon />
     </>
   );
 }

@@ -17,6 +17,7 @@ import CircleMenu from './CircleMenu';
 import ReviewContainer from './ReviewContainer';
 import Margin from '../../components/Margin/Margin';
 import DualButton from '../../components/DualButton/DualButton';
+import PopularDesign from './PopularDesign';
 
 const userType = {
   consumer: {
@@ -40,7 +41,7 @@ const MainPage = () => {
       <img src={first} alt='first' style={{ width: '92%', marginBottom: '20px' }} />
       <Horizon />
       <ReviewContainer />
-      <DualButton color='brown' count='9' />
+      <PopularDesign />
       <Margin height='150' />
 
       <NavigationBar />
