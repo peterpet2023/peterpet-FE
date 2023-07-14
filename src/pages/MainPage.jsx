@@ -33,7 +33,7 @@ const MainPage = () => {
       <AttachImage count={2} />
       <RoundButton>hi</RoundButton>
       <RoundButton size='small'>hi</RoundButton>
-      <Input placeholder='hihi' />
+      <Input height='300px' placeholder='hihi' />
       <ProgressBar percent='100' />
       <NavigationBar />
     </>
