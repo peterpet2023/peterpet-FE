@@ -11,25 +11,20 @@ import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import RoundButton from '../../components/RoundButton/RoundButton';
 import MainPageHeader from './MainPageHeader';
+import main from '../../assets/Icons/main.svg';
+import first from '../../assets/Icons/guide.svg';
+import CircleMenu from './CircleMenu';
 
 const MainPage = () => {
   return (
     <>
       <MainPageHeader />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
-      <AttachImage />
+      <img src={main} alt='main' style={{ width: '100%' }} />
+      <CircleMenu />
+      <div>hi</div>
+      <img src={first} alt='first' style={{ width: '92%', marginBottom: '20px' }} />
+      <Horizon />
+
       <NavigationBar />
     </>
   );
