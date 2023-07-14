@@ -18,6 +18,7 @@ import ReviewContainer from './ReviewContainer';
 import Margin from '../../components/Margin/Margin';
 import DualButton from '../../components/DualButton/DualButton';
 import PopularDesign from './PopularDesign';
+import LovingPeople from './LovingPeople';
 
 const userType = {
   consumer: {
@@ -42,7 +43,8 @@ const MainPage = () => {
       <Horizon />
       <ReviewContainer />
       <PopularDesign />
-      <Margin height='150' />
+      <LovingPeople />
+      <Margin height='100' />
 
       <NavigationBar />
     </>
