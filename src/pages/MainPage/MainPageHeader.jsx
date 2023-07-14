@@ -3,6 +3,7 @@ import logo from '../../assets/Icons/logo.svg';
 import Typo from '../../components/Typo/Typo';
 import user from '../../assets/Icons/user.svg';
 import { useState } from 'react';
+import Toast from '../../components/Toast/Toast';
 
 const Wrapper = styled.div`
   height: 90px;
@@ -70,7 +71,7 @@ export default function MainPageHeader() {
             내 견적
           </UnderLineTypo>
         </MenuWrapper>
-        <div style={{ paddingRight: '20px', cursor: 'pointer' }}>
+        <div onClick={() => Toast('아직 준비중입니다.')} style={{ paddingRight: '20px', cursor: 'pointer' }}>
           <img src={user} alt='user' />
         </div>
       </TabWrapper>
