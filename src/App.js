@@ -17,6 +17,7 @@ import DesignPage from './pages/DesignPage/DesignPage';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import DetailPage from './pages/DetailPage/DetailPage';
 import MapPage from './pages/MapPage/MapPage';
+import LogoPlaying from './pages/LogoPlaying';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
-          <Route path='/' element={<Welcome />} />
+          <Route path='/' element={<LogoPlaying />} />
+          <Route path='/welcome' element={<Welcome />} />
           <Route path='/test' element={<MainPage />} />
           <Route path='/select' element={<Select_account />} />
           <Route path='/Login_email' element={<Login_email />} />
