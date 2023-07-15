@@ -90,7 +90,7 @@ export default function NavigationBar({ userType }) {
         <Icon onClick={() => navigate('/guide')} img={lens}>
           가이드보기
         </Icon>
-        <Icon img='empty'>업로드하기</Icon>
+        <Icon onClick={() => navigate('/DesignUpload1')} img='empty'>업로드하기</Icon>
         <Icon img={chat} onClick={() => Toast('아직 준비중입니다.')}>
           채팅
         </Icon>

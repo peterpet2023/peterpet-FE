@@ -139,7 +139,7 @@ const Reception3 = () => {
      
       <Horizon/>  
       <ButtonWrapper>
-        <Button color='black' onClick={() => navigate('/')} >
+        <Button color='black' onClick={() => navigate('/Reception4')} >
             <Typo weight = 'bold' color= "white">다음</Typo>
         </Button>
       </ButtonWrapper>
