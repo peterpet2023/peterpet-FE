@@ -15,7 +15,6 @@ import RoundButton from '../../components/RoundButton/RoundButton';
 import Margin from '../../components/Margin/Margin';
 import Typo from '../../components/Typo/Typo';
 
-
 const RoundBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,24 +26,22 @@ const RoundBox = styled.div`
   border-radius: 7px;
   border: 1px solid ${({ theme }) => theme.colors.darkGray};
   height: ${(props) => props.height};
-`
+`;
 
-const RowBox= styled.div`
+const RowBox = styled.div`
   display: flex;
   flex-direction: row;
   margin: 10px;
   align-items: center;
   justify-content: center;
-`
+`;
 const BoxWrapper = styled.div`
   display: flex;
   flex-direction: row;
   //width: 360px;
   //justify-items: center;
   align-items: center;
-
-
-`
+`;
 const Box = styled.div`
   display: flex;
   flex-direction: column;
@@ -57,32 +54,34 @@ const Box = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.darkGray};
   height: 80px;
   margin: 20px;
+`;
 
-`
+const Text = styled(Typo)`
+  line-height: 25px;
+`;
 
-const Text= styled(Typo)`
-    line-height: 25px;
-
-`
-
-const Wrapper=styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    width: 98%;
-`
-const ImgWrapper= styled.div`
-    display: flex;
-    flex-direction: row;
-    width:90%;
-`
-
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  width: 98%;
+`;
+const ImgWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+`;
 
 const DesignUpload3 = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <ImgWrapper >
-        <img onClick={() => navigate('/DesignUpload4')} src="images/디자인등록4.png" alt="DesignUpload3 img"/>
+    <ImgWrapper>
+      <img
+        style={{ width: '100%' }}
+        onClick={() => navigate('/DesignUpload4')}
+        src='images/디자인등록4.png'
+        alt='DesignUpload3 img'
+      />
     </ImgWrapper>
   );
 };
