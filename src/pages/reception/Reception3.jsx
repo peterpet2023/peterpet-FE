@@ -122,7 +122,7 @@ const Reception3 = () => {
 
       <Horizon />
       <ButtonWrapper>
-        <Button color='black' onClick={() => navigate('/reception4')}>
+        <Button color='black' onClick={() => navigate('/map')}>
           <Typo weight='bold' color='white'>
             다음
           </Typo>

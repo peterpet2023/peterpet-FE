@@ -51,9 +51,12 @@ export default function MapPage() {
       <Header title='업체 선택하기' titleSize='medium' left='back' right='home' underLine />
       <HeadLine firstLine='디자인하신 제품을' secondLine='의뢰할 업체를 선택해주세요.' emoji='🪡🧵' fontType='large' />
       <Margin height='50' />
+      {/* <div>
+        <div id='map' style={{ width: '500px', height: '400px' }}></div>
+      </div> */}
       <img src={map} />
       {data.map(({ 상호명, 경도, 위도 }) => (
-        <Box onClick={() => navigate('/finish')}>
+        <Box onClick={() => navigate('/reception4')}>
           <TagWrapper>
             <RoundButton size='small'>리폼 3년 경력</RoundButton>
             <RoundButton size='small'>지퍼 수선 고수</RoundButton>
