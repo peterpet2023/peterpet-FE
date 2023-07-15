@@ -4,6 +4,8 @@ import Header from '../../components/Header/Header';
 import PhotoWrapper from './PhotoWrapper';
 import { styled } from 'styled-components';
 import DualButton from '../../components/DualButton/DualButton';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const petTypeList = {
   smallDog: {
@@ -40,6 +42,12 @@ const PopularPhotoContainer = styled.div`
 export default function DesignPage() {
   const { petType } = useParams();
 
+  const [designList, setDesignList] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API}/design/select`).then((r) => setDesignList(r.data.result.selectAllDesign));
+  }, []);
+
   return (
     <>
       <Header title='전체 보기' titleSize='medium' left='back' right='home' underLine />
@@ -50,17 +58,9 @@ export default function DesignPage() {
         fontType='large'
       />
       <PopularPhotoContainer>
-        <PhotoWrapper text='마뮤' />
-        <PhotoWrapper text='마뮤' />
-        <PhotoWrapper text='마뮤' />
-        <PhotoWrapper text='마뮤' />
-        <PhotoWrapper text='마뮤' />
-        <PhotoWrapper text='마뮤' />
-        <PhotoWrapper text='마뮤' />
-        <PhotoWrapper text='마뮤' />
-        <PhotoWrapper text='마뮤' />
-        <PhotoWrapper text='마뮤' />
-        <PhotoWrapper text='마뮤' />
+        {designList.map(({ designImage1, designTitle }) => (
+          <PhotoWrapper text={designTitle} img={designImage1} id={designTitle} />
+        ))}
       </PopularPhotoContainer>
       <DualButton count='1' color='brown' />
     </>

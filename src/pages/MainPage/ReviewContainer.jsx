@@ -95,9 +95,9 @@ export default function ReviewContainer() {
         </PhotoWrapper>
         <ReviewContentWrapper>
           <Margin height='16' />
-          <Typo fontType='medium'>제목</Typo>
+          <Typo fontType='medium'>ddodo님의 리얼 후기</Typo>
           <Margin height='12' />
-          <Typo>내용asdfasdfasdfasㅁㄴ아ㅗ럼노어ㅏㄹ너마로나머ㅏㄴ오라ㅓㅁ노아러ㅗ머나오람너</Typo>
+          <Typo>소형견 디자인으로 의뢰했습니다. 보내준 소재가 좋지만은 않았지만, 최대한 티안나게...</Typo>
         </ReviewContentWrapper>
       </ReviewBoxContainer>
       <DualButton count={reviewCount} onClick={handleReviewCount} />

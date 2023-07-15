@@ -19,6 +19,10 @@ import Margin from '../../components/Margin/Margin';
 import DualButton from '../../components/DualButton/DualButton';
 import PopularDesign from './PopularDesign';
 import LovingPeople from './LovingPeople';
+import FileInput from '../../components/FileInput';
+import { useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const userType = {
   consumer: {
@@ -32,19 +36,35 @@ const userType = {
   },
 };
 const MainPage = () => {
+  const navigate = useNavigate();
+
   // TODO: 유저의 타입 불러오기
+  useEffect(() => {
+    axios
+      .get(`https://api.odcloud.kr/api/15087016/v1/uddi:9198b30d-4362-4791-818e-b5cbda2fdd5e`, {
+        headers: {
+          Authorization:
+            'Infuser exyhdAyKQcM4ioF37fW8/tsEIYtgjB7fgKD6sT/CqfXHphoZ2Uw6iFOX7zWjwcO3gytOzROEbTSuvAGtQVynwg==',
+        },
+        params: {
+          key: 'exyhdAyKQcM4ioF37fW8/tsEIYtgjB7fgKD6sT/CqfXHphoZ2Uw6iFOX7zWjwcO3gytOzROEbTSuvAGtQVynwg==', // 인증 키를 쿼리 파라미터로 추가
+        },
+      })
+      .then((r) => console.log(r));
+  }, []);
 
   return (
     <>
       <MainPageHeader />
       <img src={main} alt='main' style={{ width: '100%' }} />
       <CircleMenu title='반려견 옷제작 바로 검색하기' />
-      <img src={first} alt='first' style={{ width: '92%', marginBottom: '20px' }} />
+      <img onClick={() => navigate('/guide')} src={first} alt='first' style={{ width: '92%', marginBottom: '20px' }} />
       <Horizon />
       <ReviewContainer />
       <PopularDesign />
       <LovingPeople />
       <Margin height='100' />
+
       <NavigationBar userType='designer' />
     </>
   );

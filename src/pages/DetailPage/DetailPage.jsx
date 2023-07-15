@@ -9,6 +9,8 @@ import hoodDog from './hoodDog.png';
 import { styled } from 'styled-components';
 import RoundButton from '../../components/RoundButton/RoundButton';
 import Typo from '../../components/Typo/Typo';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Box = styled.div`
   width: 310px;
@@ -29,6 +31,13 @@ const TagWrapper = styled.div`
 export default function DetailPage() {
   const { designId } = useParams();
   const navigate = useNavigate();
+  const [designData, setDesignData] = useState({});
+
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API}/design/select/designTitle/${designId}`).then((r) => {
+      setDesignData(r.data.result.selectAllDesign[0]);
+    });
+  }, []);
 
   return (
     <>
@@ -39,7 +48,7 @@ export default function DetailPage() {
       <Margin height='60' />
       <Button fontType='medium'> 제작 의뢰서</Button>
       <Margin height='20' />
-      <Typo fontType='large'>니트 후드티</Typo>
+      <Typo fontType='large'>{designData.designTitle}</Typo>
       <Margin height='16' />
 
       <Horizon />
@@ -51,12 +60,14 @@ export default function DetailPage() {
           <RoundButton size='small'>대형견 스타일</RoundButton>
           <RoundButton size='small'>가장 인기 있는</RoundButton>
         </TagWrapper>
-        <Typo fontType='medium'>🧚 이수경 디자이너</Typo>
+        <Typo fontType='medium'>🧚 {designData.designerName} 디자이너</Typo>
         <Margin height='10' />
         <Typo fontType='small' color='darkGray'>
           제작 예상 금액
         </Typo>
-        <Typo fontType='medium'>150,000원 ~ 300,000원</Typo>
+        <Typo fontType='medium'>
+          {designData.designPriceLower}원 ~ {designData.designPriceUpper}원
+        </Typo>
       </Box>
       <Margin height='20' />
       <Button color='black' onClick={() => navigate('/Reception2')}>
