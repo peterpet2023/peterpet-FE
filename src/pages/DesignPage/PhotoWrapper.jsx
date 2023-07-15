@@ -16,7 +16,7 @@ export default function PhotoWrapper({ img, text, id }) {
   const navigate = useNavigate();
 
   return (
-    <Wrapper id={id} onClick={() => navigate(`/detail/${id}`)}>
+    <Wrapper id={id} onClick={() => navigate(`/detail/1`)}>
       <Photo src={img} />
       <Margin height='10' />
       <Typo fontType='small'>{text}</Typo>
