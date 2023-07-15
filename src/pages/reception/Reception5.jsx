@@ -1,7 +1,6 @@
 /* <div id='map' style={{ width: '500px', height: '400px' }}></div>; */
 import { styled } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-
 import AttachImage from '../../components/AttachImage/AttachImage';
 import Button from '../../components/Button/Button';
 import HeadLine from '../../components/HeadLine/HeadLine';
@@ -14,80 +13,93 @@ import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import RoundButton from '../../components/RoundButton/RoundButton';
 import Margin from '../../components/Margin/Margin';
 import Typo from '../../components/Typo/Typo';
+import { useState } from 'react';
+import FileInput from '../../components/FileInput';
 import Toast from '../../components/Toast/Toast';
 
-const RoundBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  color: ${({ theme }) => theme.colors.smog};
+const pets = [
+  {
+    icon: '🐕‍🦺',
+    name: '소형견',
+    id: 'smallDog',
+  },
+  {
+    icon: '🐩',
+    name: '중형견',
+    id: 'mediumDog',
+  },
+  {
+    icon: '🐕',
+    name: '대형견',
+    id: 'largeDog',
+  },
+  {
+    icon: '🐈‍⬛',
+    name: '고양이',
+    id: 'cat',
+  },
+];
 
-  border-radius: 7px;
-  border: 1px solid ${({ theme }) => theme.colors.darkGray};
-  height: ${(props) => props.height};
-`;
-
-const RowBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 10px;
-  align-items: center;
-  justify-content: center;
-`;
-const BoxWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  //width: 360px;
-  //justify-items: center;
-  align-items: center;
-`;
 const Box = styled.div`
+  width: 165px;
+  height: 110px;
+  background-color: ${(props) => (props.on === true ? props.theme.colors.darkGray : props.theme.colors.gray)};
+  border-radius: 7px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const BoxContainer = styled.div`
+  width: 370px;
+  height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  color: ${({ theme }) => theme.colors.smog};
-
-  border-radius: 1px;
-  border: 1px solid ${({ theme }) => theme.colors.darkGray};
-  height: 80px;
-  margin: 20px;
+  gap: 16px;
 `;
 
-const Text = styled(Typo)`
-  line-height: 25px;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  width: 98%;
-`;
-const ImgWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-`;
-
-const Reception5 = () => {
+const DesignUpload1 = () => {
   const navigate = useNavigate();
+
+  const [select, setSelect] = useState({
+    smallDog: false,
+    mediumDog: false,
+    largeDog: false,
+    cat: false,
+  });
+
   return (
-    <ImgWrapper>
-      <img
-        style={{ width: '100%' }}
+    <>
+      <Header titleSize='medium' left='back' right='home' title='디자인 등록' underLine />
+      <Margin height='20' />
+      <ProgressBar percent='100' />
+      <HeadLine
+        fontType='large'
+        firstLine='의뢰가 완료되었습니다.'
+        subTitle='다음 단계로 넘어가시면 수정이 불가합니다.'
+      />
+      <Margin height='500' />
+
+      <Button
+        color='black'
         onClick={() => {
-          Toast('의뢰가 완료되었습니다~!');
+          Toast('디자인 등록 완료! 감사합니다');
           navigate('/main');
         }}
-        src='images/접수5.png'
-        alt='Reception5 img'
-      />
-    </ImgWrapper>
+      >
+        다음
+      </Button>
+      <Margin height='30' />
+    </>
   );
 };
 
-export default Reception5;
+export default DesignUpload1;
