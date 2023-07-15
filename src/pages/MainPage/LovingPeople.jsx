@@ -5,6 +5,8 @@ import Margin from '../../components/Margin/Margin';
 import dog1 from './dog1.png';
 import dog2 from './dog2.png';
 import Horizon from '../../components/Hotrizon/Horizon';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const TagContainer = styled.div`
   width: 1000px;

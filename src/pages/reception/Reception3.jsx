@@ -15,7 +15,6 @@ import RoundButton from '../../components/RoundButton/RoundButton';
 import Margin from '../../components/Margin/Margin';
 import Typo from '../../components/Typo/Typo';
 
-
 const RoundBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,124 +26,108 @@ const RoundBox = styled.div`
   border-radius: 7px;
   border: 1px solid ${({ theme }) => theme.colors.darkGray};
   height: ${(props) => props.height};
-`
+`;
 
-const TextBox= styled.div`
+const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
   margin: 10px;
   text-align: center;
-`
+`;
 const BoxWrapper = styled.div`
   display: flex;
   flex-direction: row;
   //width: 360px;
   //justify-items: center;
   align-items: center;
-
-
-`
+`;
 const Box = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    justify-items: center;
-    align-items: center;
-    width:100%;
-`
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+`;
 
-const Text= styled(Typo)`
-    line-height: 25px;
-
-`
-const UploadWrapper=styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 15px;
-`
-const Wrapper=styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    width: 98%;
-`
+const Text = styled(Typo)`
+  line-height: 25px;
+`;
+const UploadWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px;
+`;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 98%;
+`;
 const ButtonWrapper = styled.div`
-    display:flex;
-    flex-direction: column;
-    width: 90%;
-    border: none;
-    margin:10px;
-
-`
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border: none;
+  margin: 10px;
+`;
 const Reception3 = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-   
     <>
       <Header underLine titleSize='midium' title='요청사항 입력하기' left='back' right='cancel' />
-      
-      <Margin height='20'/>
-      
+
+      <Margin height='20' />
+
       <ProgressBar percent='80' />
-      
-      <HeadLine
-        fontType='large'
-        firstLine='제작 요청사항을 입력해주세요'
-      />
-     
-      <Margin height='20'/>
 
-      <Wrapper>  
+      <HeadLine fontType='large' firstLine='제작 요청사항을 입력해주세요' />
+
+      <Margin height='20' />
+
+      <Wrapper>
         <UploadWrapper>
-        <Typo weight='bold'>제작 요청 사항 선택 </Typo>  
-        <Margin height= '5'/>
-        <RoundBox height='50px'> 
-            <Typo color='gray'>제작 요청 사항을 선택해 주세요.</Typo>
-        </RoundBox>
+          <Typo weight='bold'>제작 요청 사항 선택 </Typo>
+          <Margin height='5' />
+          <Input placeholder='제작 요청사항을 입력해주세요' />
         </UploadWrapper>
 
         <UploadWrapper>
-        <Typo weight='bold'>사이즈 </Typo>  
-        <Margin height= '5'/>
-        <RoundBox height='50px'>
-            <Typo color='gray'>제작 요청 사항을 선택해 주세요.</Typo>
-        </RoundBox>
+          <Typo weight='bold'>사이즈 </Typo>
+          <Margin height='5' />
+          <Input placeholder='제작 요청사항을 선택해주세요' />
         </UploadWrapper>
 
         <UploadWrapper>
-        <RoundBox>
-            <Margin height='10'/>
+          <RoundBox>
+            <Margin height='10' />
             <TextBox>
-                <Text weight='bold' color='gray'>
-                    요청 사항을 적으실 때는 세 가지만 기억해주세요! <br/>
-                    어디가   어때서   어떻게 <br/>
-                </Text>
-                <Margin height='5'/>
-                <Typo size='small' color='gray'>  Ex. 옷의 목부분에 레이스를 달아주세요.</Typo>  
-                
+              <Text weight='bold' color='gray'>
+                요청 사항을 적으실 때는 세 가지만 기억해주세요! <br />
+                어디가 어때서 어떻게 <br />
+              </Text>
+              <Margin height='5' />
+              <Typo size='small' color='gray'>
+                {' '}
+                Ex. 옷의 목부분에 레이스를 달아주세요.
+              </Typo>
             </TextBox>
-        </RoundBox>
-        <Margin height='15'/>
-        <Box>
-            <Input height='200px' placeholder='위의 안내에 따라 적어주셔야 자세하고 친절한 상담이 가능합니다.'/>
-        </Box>
+          </RoundBox>
+          <Margin height='15' />
+          <Input height='200px' placeholder='위의 안내에 따라 적어주셔야 자세하고 친절한 상담이 가능합니다.' />
         </UploadWrapper>
-
-
-      
       </Wrapper>
 
-     
-      <Horizon/>  
+      <Horizon />
       <ButtonWrapper>
-        <Button color='black' onClick={() => navigate('/')} >
-            <Typo weight = 'bold' color= "white">다음</Typo>
+        <Button color='black' onClick={() => navigate('/reception4')}>
+          <Typo weight='bold' color='white'>
+            다음
+          </Typo>
         </Button>
       </ButtonWrapper>
-
-      
     </>
   );
 };
