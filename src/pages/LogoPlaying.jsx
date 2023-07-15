@@ -18,7 +18,7 @@ export default function LogoPlaying() {
   useEffect(() => {
     const timer = setTimeout(() => {
       // 페이지를 넘기는 코드 작성
-      navigate('/welcome');
+      navigate('/select');
     }, 1500); // 1초 후에 실행됨 (1000 밀리초 = 1초)
 
     return () => {

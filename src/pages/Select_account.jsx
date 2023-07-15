@@ -50,7 +50,7 @@ const Select_account = () => {
       </Textbox>
 
       <Buttonbox>
-        <Button onClick={() => navigate('/Login_email')} color='brown'>
+        <Button onClick={() => navigate('/main')} color='brown'>
           <Typo weight='bold' color='white'>
             저는 고객입니다.
           </Typo>
@@ -58,7 +58,7 @@ const Select_account = () => {
       </Buttonbox>
 
       <Buttonbox>
-        <Button onClick={() => navigate('/Login_email')} color='brown'>
+        <Button onClick={() => navigate('/main')} color='brown'>
           <Typo weight='bold' color='white'>
             저는 디자이너입니다.
           </Typo>
@@ -66,7 +66,7 @@ const Select_account = () => {
       </Buttonbox>
 
       <Buttonbox>
-        <Button onClick={() => navigate('/Login_email')} color='brown'>
+        <Button onClick={() => navigate('/main')} color='brown'>
           <Typo weight='bold' color='white'>
             저는 재단사입니다.
           </Typo>
