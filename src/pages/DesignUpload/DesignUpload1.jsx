@@ -14,75 +14,106 @@ import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import RoundButton from '../../components/RoundButton/RoundButton';
 import Margin from '../../components/Margin/Margin';
 import Typo from '../../components/Typo/Typo';
+import { useState } from 'react';
 
-const RoundBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  color: ${({ theme }) => theme.colors.smog};
+const pets = [
+  {
+    icon: '🐕‍🦺',
+    name: '소형견',
+    id: 'smallDog',
+  },
+  {
+    icon: '🐩',
+    name: '중형견',
+    id: 'mediumDog',
+  },
+  {
+    icon: '🐕',
+    name: '대형견',
+    id: 'largeDog',
+  },
+  {
+    icon: '🐈‍⬛',
+    name: '고양이',
+    id: 'cat',
+  },
+];
 
-  border-radius: 7px;
-  border: 1px solid ${({ theme }) => theme.colors.darkGray};
-  height: ${(props) => props.height};
-`;
-
-const RowBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 10px;
-  align-items: center;
-  justify-content: center;
-`;
-const BoxWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  //width: 360px;
-  //justify-items: center;
-  align-items: center;
-`;
 const Box = styled.div`
+  width: 165px;
+  height: 110px;
+  background-color: ${(props) => (props.on === true ? props.theme.colors.darkGray : props.theme.colors.gray)};
+  border-radius: 7px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const BoxContainer = styled.div`
+  width: 370px;
+  height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  color: ${({ theme }) => theme.colors.smog};
-
-  border-radius: 1px;
-  border: 1px solid ${({ theme }) => theme.colors.darkGray};
-  height: 80px;
-  margin: 20px;
-`;
-
-const Text = styled(Typo)`
-  line-height: 25px;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  width: 98%;
-`;
-const ImgWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 90%;
+  gap: 16px;
 `;
 
 const DesignUpload1 = () => {
   const navigate = useNavigate();
+
+  const [select, setSelect] = useState({
+    smallDog: false,
+    mediumDog: false,
+    largeDog: false,
+    cat: false,
+  });
+
   return (
-    <ImgWrapper>
-      <img
-        style={{ width: '100%' }}
-        onClick={() => navigate('/DesignUpload2')}
-        src='images/디자인등록1.png'
-        alt='DesignUpload1 img'
-      />
-    </ImgWrapper>
+    <>
+      <Header titleSize='medium' left='back' right='home' title='디자인 선택하기' underLine />
+      <Margin height='20' />
+      <ProgressBar percent='0' />
+      <HeadLine fontType='large' firstLine='업로드할 디자인의' secondLine='카테고리를 선택해 주세요.' />
+      <Margin height='60' />
+
+      <BoxContainer>
+        {pets.map(({ name, icon, id }) => (
+          <Box
+            on={select[id]}
+            id={id}
+            onClick={(e) => {
+              const { id } = e.currentTarget;
+
+              setSelect({
+                smallDog: false,
+                mediumDog: false,
+                largeDog: false,
+                cat: false,
+                [id]: true,
+              });
+            }}
+          >
+            <IconWrapper>
+              <Typo size='36px'>{icon}</Typo>
+              <Typo fontType='medium'>{name}</Typo>
+            </IconWrapper>
+          </Box>
+        ))}
+      </BoxContainer>
+
+      <Margin height='70' />
+
+      <Button color='black' onClick={() => navigate('/DesignUpload2')}>
+        다음
+      </Button>
+    </>
   );
 };
 

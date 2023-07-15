@@ -6,6 +6,7 @@ import Button from '../components/Button/Button';
 import Horizon from '../components/Hotrizon/Horizon';
 import Header from '../components/Header/Header';
 import Typo from '../components/Typo/Typo';
+import Toast from '../components/Toast/Toast';
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,7 +36,7 @@ const Select_account = () => {
   const navigate = useNavigate();
   return (
     <Wrapper>
-      <Header titleSize='large' left='cancel' />
+      <Header titleSize='large' left='back' />
 
       <Textbox>
         <Typo size='1.8em' weight='bold'>
@@ -50,7 +51,13 @@ const Select_account = () => {
       </Textbox>
 
       <Buttonbox>
-        <Button onClick={() => navigate('/main')} color='brown'>
+        <Button
+          onClick={() => {
+            Toast('고객님 환영합니다!');
+            navigate('/main');
+          }}
+          color='brown'
+        >
           <Typo weight='bold' color='white'>
             저는 고객입니다.
           </Typo>
@@ -58,7 +65,13 @@ const Select_account = () => {
       </Buttonbox>
 
       <Buttonbox>
-        <Button onClick={() => navigate('/main')} color='brown'>
+        <Button
+          onClick={() => {
+            Toast('디자이너님 환영합니다!');
+            navigate('/main');
+          }}
+          color='brown'
+        >
           <Typo weight='bold' color='white'>
             저는 디자이너입니다.
           </Typo>
@@ -66,7 +79,13 @@ const Select_account = () => {
       </Buttonbox>
 
       <Buttonbox>
-        <Button onClick={() => navigate('/main')} color='brown'>
+        <Button
+          onClick={() => {
+            Toast('재단사님 환영합니다!');
+            navigate('/main');
+          }}
+          color='brown'
+        >
           <Typo weight='bold' color='white'>
             저는 재단사입니다.
           </Typo>
