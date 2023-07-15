@@ -31,13 +31,22 @@ const TagWrapper = styled.div`
 export default function DetailPage() {
   const { designId } = useParams();
   const navigate = useNavigate();
-  const [designData, setDesignData] = useState({});
 
-  useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API}/design/select/designTitle/${designId}`).then((r) => {
-      setDesignData(r.data.result.selectAllDesign[0]);
-    });
-  }, []);
+  const [designData, setDesignData] = useState({
+    designCode: 1,
+    designTitle: '테스트 입니다',
+    designerName: '테스터',
+    uploadDate: '2023-07-14T09:00:00.000+00:00',
+    designImage1:
+      'https://images.mypetlife.co.kr/content/uploads/2022/05/23103009/d3281c8c-eed4-44e8-b7c9-f4a161e21b97.jpg',
+    designImage2: 'ㅋㅋ',
+    designImage3: 'ㅌ',
+    designCount: 0,
+    designCategory: '소형견',
+    designPrice: 4000,
+    designPriceLower: 1000,
+    designPriceUpper: 5000,
+  });
 
   return (
     <>
